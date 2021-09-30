@@ -1,2 +1,2 @@
-# -JavaSkillStudy
+# JavaSkillStudy
 Code Test Study
