@@ -25,23 +25,23 @@ public class failRunnerTest {
 			}
 		}
 		
-		System.out.println("참가자 : "+ participantMap);
-		System.out.println("완주자 : "+ completionMap);
+//		System.out.println("참가자 : "+ participantMap);
+//		System.out.println("완주자 : "+ completionMap);
+//		
+//		for(String key : participantMap.keySet()) {
+//			int count = participantMap.get(key);
+//			System.out.println("참가자 : "+ key + ", 동명이인 인원수 : " + count);
+//			if(completionMap.get(key)!=count) {
+//				System.out.println(key +"이란 이름의 참가자 수 : " + count + ", 완주자 수 : "+ completionMap.get(key));
+//				answer = key;
+//			}
+//		}
 		
-		for(String key : participantMap.keySet()) {
-			int count = participantMap.get(key);
-			System.out.println("참가자 : "+ key + ", 동명이인 인원수 : " + count);
-			if(completionMap.get(key)!=count) {
-				System.out.println(key +"이란 이름의 참가자 수 : " + count + ", 완주자 수 : "+ completionMap.get(key));
-				answer = key;
-			}
-		}
-		
-//		for(int j=0; j < participant.length; j++) {
-//            if(participantMap.get(participant[j])!=completionMap.get(participant[j])) {
-//                answer = participant[j];
-//            }
-//        }
+		for(int j=0; j < participant.length; j++) {
+            if(participantMap.get(participant[j])!=completionMap.get(participant[j])) {
+                answer = participant[j];
+            }
+        }
 		
         return answer;
     }
