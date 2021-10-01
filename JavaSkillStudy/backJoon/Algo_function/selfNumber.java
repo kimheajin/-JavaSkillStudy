@@ -10,6 +10,7 @@ public class selfNumber {
 	public static final int HUNDRED = 100;
 	public static final int TEN = 10;
 	
+	
 	public static void main(String[] args) {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		// 합계 저장 변수

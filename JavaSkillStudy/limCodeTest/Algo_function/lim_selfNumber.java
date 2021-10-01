@@ -10,6 +10,7 @@ public class lim_selfNumber {
 	public static void main(String[] args) {
 		List<Integer> intList = new ArrayList<Integer>();
 		
+		
 		for(int i=1;i<10000;i*=10) {
 			for(int j=i; j<i*10;j++) {
 			int result=0;
