@@ -73,7 +73,7 @@ public class spyCamouflage {
         
         if(spyClothes.size()>1){
             for(String clothe : spyClothes.keySet()) {
-        		answer *=(spyClothes.get(clothe).size()+1);
+        		answer = answer * (spyClothes.get(clothe).size());
         	}
             answer--;
         }else{
