@@ -71,11 +71,16 @@ public class spyCamouflage {
         	}
         }
         
-        for(String clothe : spyClothes.keySet()) {
-        	answer = answer * (spyClothes.get(clothe).size()+1);
+        if(spyClothes.size()>1){
+            for(String clothe : spyClothes.keySet()) {
+        		answer *=(spyClothes.get(clothe).size()+1);
+        	}
+            answer--;
+        }else{
+        		answer = clothes.length;
         }
-
-        return answer-1;
+        
+        return answer;
     }
 
 }
