@@ -23,9 +23,6 @@ public class hIndex {
 			}
 			if(count>=citations[i]) {
 				answer = count;
-				if(count != citations[i]) {
-					answer = count;
-				}
 				break;
 			}else if(i==0 && count<=citations[i]){
 				answer = citations.length;
@@ -33,5 +30,4 @@ public class hIndex {
 		}
         return answer;
 	}
-
 }
