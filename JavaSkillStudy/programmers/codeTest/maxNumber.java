@@ -12,52 +12,64 @@ public class maxNumber {
 		
 	}
 	public static String solution(String number, int k) {
-        ArrayList<Integer> arr = new ArrayList<>();
+//        ArrayList<Integer> arr = new ArrayList<>();
         
         /* 최고의 수를 만드는 숫자를 뽑기 위한 규칙
          * 1. 앞, 뒤를 비교해 작은 수를 리스트로부터 삭제한다. */
         
-        for(int i=0; i<number.length(); i++) {
-        	arr.add(Integer.parseInt(number.substring(i, i + 1)));
-        }
-        StringBuffer sb1 = new StringBuffer();
-        StringBuffer sb2 = new StringBuffer();
-
-        for(int j=0; j<k; j++) {
-        	String tmp1 = "";
-        	String tmp2 = "";
-        	for(int m=0; m<arr.size(); m++) {
-        		// Stringbuffer에 number값 넣기
-        		sb1.append(number);
-        		sb2.append(number);
-        		
-        		// sb1 한글자 지우기
-        		sb1.deleteCharAt(m);
-        		// 비교를 위해 tmp1에 넣음
-        		tmp1 = sb1.toString();
-        		// sb2 한글자 지우기
-        		sb2.deleteCharAt(m+1);
-        		// 비교를 위해 tmp2에 넣음
-        		tmp2 = sb2.toString();
-
-        		// tmp1이 큰 경우 0보다 작으며, tmp2가 큰 경우 0보다 큼.
-        		if(tmp1.compareTo(tmp2)>0) {
-        			// tmp1의 값을 number에 저장한 후, sb1, sb2를 초기화시키고 break; 
-        			number = tmp1;
-        			sb1.delete(0, sb1.length());
-        			sb2.delete(0, sb2.length());
-        			break;
-        		}else {
-        			// 그 외의 경우 sb1, sb2을 초기화 
-        			sb1.delete(0, sb1.length());
-        			sb2.delete(0, sb2.length());
+        StringBuilder sb = new StringBuilder();
+        // 최대값을 저장할 max
+        int max = 0; 
+        // max값의 index를 저장할 index
+        int index = 0;
+        
+        // 구해야하는 수 만큼 돌리기
+        for(int i=0; i<number.length()-k; i++) {
+        	// max값은 비교를 빠져나올때마다 초기화
+        	max = 0;
+        	for(int j=index; j<=i+k;j++) {
+        		// int값으로 비교를 하기 위해 -'0'를 추가.
+        		// ex: '1'(아스키코드 : 49)-'0'(아스키코드 : 48)을 하면 숫자 1이 된다.
+        		// 위의 ex와 같은 방식으로 int값을 구함.
+        		if(max < number.charAt(j)-'0') {
+        			max = number.charAt(j)-'0';
+        			// max값의 위치를 찾기 위한 index
+        			index = j + 1;
         		}
         	}
+        	sb.append(max);
         }
+        
+        /* arr를 이용한 방식 */
+//        int size = number.length();
+        // number의 길이에서 -k, 즉 삭제할 수를 빼서 구해야 하는 수만큼 돌리기로 한다.
+//        for(int i=0; i<k; i++) {
+//        	// number의 첫번째부터 구해야 하는 수(k)만큼 for문을 움직여 arr의 값을 구한다.
+//        	for(int j=0; j<k-i; j++) {
+//        		arr.add(Integer.parseInt(number.substring(j, j + 1)));
+//        	}
+//        	// 제일 마지막의 삭제값까지 구하면 아래 if문 실행
+//        	if(arr.size()==1) {
+//        		arr.add(Integer.parseInt(number.substring(arr.size(), arr.size() + 1)));
+//        		// arr의 첫째 값과 number의 그 다음값을 비교해 max값을 뽑는다.
+//        	}
+//        	// 구해진 arr값 중 가장 큰 수를 구한다.
+//        	String max = Integer.toString(Collections.max(arr));
+//        	// sb에 최고값을 저장한다.
+//        	sb.append(max);
+//        	// 최고값을 기준으로 최고값 이후의 값에서~끝에 값 까지number에 저장한다.(비교용)
+//        	number = number.substring(number.indexOf(max)+1,number.length());
+//        	arr.clear();
+//        	//  = 전체 사이즈 - 현재 number의 길이(자른 후 길이) + sb에 추가된 값
+//        	if(size-(number.length()+sb.length()) == k) {
+//        		break;
+//        	}
+//        }
+        
+//        sb.append(number);
+        
 
-        String answer = number;
-
-        return answer;
+        return sb.toString();
     }
 
 }
