@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 public class CaesarCipher {
 
 	public static void main(String[] args) {
+		/* 시저 암호 */
 		solution("a B z", 4);
 	}
 	public static String solution(String s, int n) {
@@ -35,54 +36,6 @@ public class CaesarCipher {
 			answer.append((char)(code));
 			
 		}
-		
-//        HashMap<Integer, String> m = new HashMap();
-        
-        // 1~26을 키로, A~Z를 삽입.
-//        for(int i=0; i<26;i++) {
-//        	m.put(i+1, String.valueOf((char) ('A' + i)));
-//        }
-        
-        // s가 들어오면 s를 배열로 받은 후 hashmap에서 해당하는 key를 찾는다. 
-        // 여기서 -1을 붙인다면 공백도 살린다는 의미.
-//        String[] answer = s.split("");
-//        
-//        int key = 0;
-//        for(int j=0; j<0; j++) {
-//        	m.entrySet().stream().filter(e -> {
-//        								String up = answer[0];
-//        								return up.equals(e.getValue());
-//    							})
-//        						 .map(Map.Entry::getKey)
-//        						 .collect(Collectors.toSet());
-        	
-//        }
-        
-//        for(int o : m.keySet()) {
-//        	
-//        	if((answer.length)==j) {
-//        		break;
-//        	}
-//        	up = answer[j].toUpperCase();
-//        	if(up.equals(m.get(o))) {
-//        		// key에 n을 더함.
-//        		key = o + n;
-//        		// 만약 더한 값이 m의 길이를 초과할 경우
-//        		if(key > m.size()) {
-//        			// key값에서 m.size()만큼 뺀 값이 key값이 됨.
-//        			key = key-m.size();
-//        		}
-//        		// answer의 값이 대문자인가?
-//        		if(up.compareTo(answer[j])==0) {
-//        			// key로 +n한 알파벳을 찾음.
-//        			answer[j] = m.get(key);
-//        		}else {
-//        			// 대문자가 아닌 경우
-//        			answer[j] = m.get(key).toLowerCase();
-//        		}
-//        	}
-//        	j++;
-//        }
         
         return answer.toString();
     }

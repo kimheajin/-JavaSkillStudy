@@ -3,6 +3,7 @@ package codeTest;
 public class PandYCount {
 
 	public static void main(String[] args) {
+		/* 문자열 내 p와 y의 개수 */
 		System.out.println(solution("pPoooyY"));
 	}
 	public static boolean solution(String s) {

@@ -9,6 +9,7 @@ public class StrangeWords {
 		System.out.println(solution("sp ace"));
 	}
 	public static String solution(String s) {
+		
         // 공백으로 나눈 값을 save에 저장.
 		String[] save = s.split(" ", -1);
 		// 변환된 문장을 저장할 Stringbuffer변수
